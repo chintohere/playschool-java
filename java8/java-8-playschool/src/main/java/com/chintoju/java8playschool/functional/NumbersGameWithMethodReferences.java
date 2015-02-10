@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java8playschool.functional;
+package com.chintoju.java8playschool.functional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +19,7 @@ public class NumbersGameWithMethodReferences {
 
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        System.out.println(numbers.stream().filter(new GreaterThanThree()).filter(NumbersGameWithMethodReferences::isEven).findFirst());
+        System.out.println(numbers.stream().filter(new com.chintoju.java8playschool.functional.GreaterThanThree()).filter(NumbersGameWithMethodReferences::isEven).findFirst());
     }
 
     public static boolean isGreaterThanThree(Integer i) {

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java8playschool.functional;
+package com.chintoju.java8playschool.functional;
 
 import java.util.Arrays;
 import java.util.List;
