@@ -170,4 +170,24 @@ public class BinaryNode<T extends Comparable>
 		sb.append(right != null ? right.getData().toString() : "[]").append("\n");
 		return sb.toString();
 	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+			return true;
+		if (!(o instanceof BinaryNode))
+			return false;
+
+		BinaryNode<?> that = (BinaryNode<?>) o;
+
+		return !(data != null ? !data.equals(that.data) : that.data != null);
+
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return data != null ? data.hashCode() : 0;
+	}
 }

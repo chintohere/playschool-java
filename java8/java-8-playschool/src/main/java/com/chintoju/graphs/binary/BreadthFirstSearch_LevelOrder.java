@@ -7,33 +7,27 @@ import java.util.LinkedList;
  */
 public class BreadthFirstSearch_LevelOrder
 {
-	private static LinkedList<BinaryNode<Integer>> depth;
-	private static int maxHeight = 0;
+	private static LinkedList<BinaryNode<Integer>> queue;
 
 	public static void main(String[] args)
 	{
-		maxHeight = 0;
 		BinaryNode<Integer> tree = BinaryTreeBuilder.buildBinarySearchTree();
 		levelOrder(tree);
-		System.out.println("\nHeight: "+maxHeight);
 	}
 
 	private static void levelOrder(BinaryNode<Integer> node)
 	{
-		depth = new LinkedList<>();
-		depth.add(node);
-		if (depth.size() > 0)
-			maxHeight++;
+		queue = new LinkedList<>();
+		queue.add(node);
 
-		while (!depth.isEmpty())
+		while (!queue.isEmpty())
 		{
-			maxHeight++;
-			final BinaryNode<Integer> binaryNode = depth.pop();
-			System.out.print(binaryNode.getData()+", ");
+			final BinaryNode<Integer> binaryNode = queue.pop();
+			System.out.print(binaryNode.getData() + ", ");
 			if (binaryNode.getLeft() != null)
-				depth.add(binaryNode.getLeft());
+				queue.add(binaryNode.getLeft());
 			if (binaryNode.getRight() != null)
-				depth.add(binaryNode.getRight());
+				queue.add(binaryNode.getRight());
 		}
 	}
 }
